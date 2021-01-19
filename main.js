@@ -34,4 +34,15 @@ function objectToArray(obj) {
     }
     return pair;}
 
-console.log(objectToArray(cars));
+//console.log(objectToArray(cars));
+
+//Reto 02
+function arrayToObject(array) {
+    let obj = {};
+    array.forEach(element => {
+        obj[element[0]]=element[1];
+    });
+    return obj;
+}
+
+console.log(arrayToObject([['brand', 'Nissan'], ['model', 'Versa'], ['year', 2020]]))
