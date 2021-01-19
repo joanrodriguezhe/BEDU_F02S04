@@ -28,10 +28,23 @@ let cars = {
 
 function objectToArray(obj) {
     let keys = Object.keys(obj);
-    let pair=[];
-    for(let i =0;i<keys.length;i++){
-        pair.push([keys[i],obj[keys[i]]])
+    let pair = [];
+    for (let i = 0; i < keys.length; i++) {
+        pair.push([keys[i], obj[keys[i]]])
     }
-    return pair;}
+    return pair;
+}
 
-console.log(objectToArray(cars));
+//console.log(objectToArray(cars));
+
+//Reto 02
+
+function arrayToObject(array) {
+    let obj = {};
+    array.forEach(element => {
+        obj.element[0] = obj.element[1];
+    });
+    return obj;
+}
+
+console.log(arrayToObject([['brand', 'Nissan'], ['model', 'Versa'], ['year', 2020]]))
