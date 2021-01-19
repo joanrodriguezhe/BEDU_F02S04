@@ -12,10 +12,26 @@ function multiplyByTwo(numbers) {
 
 //Reto 01
 function calculateAverage(numbers) {
-    let sum=numbers.reduce((el,nxt)=>{
-        return el+nxt
-    },0)
-    return sum/numbers.length;
-  }
+    let sum = numbers.reduce((el, nxt) => {
+        return el + nxt
+    }, 0)
+    return sum / numbers.length;
+}
 
-  console.log(calculateAverage([1,2,3,4,5]));
+//console.log(calculateAverage([1,2,3,4,5]));
+//Ejemplo 2
+let cars = {
+    brand: 'Nissan',
+    model: 'Versa',
+    year: 2020
+}
+
+function objectToArray(obj) {
+    let keys = Object.keys(obj);
+    let pair=[];
+    for(let i =0;i<keys.length;i++){
+        pair.push([keys[i],obj[keys[i]]])
+    }
+    return pair;}
+
+console.log(objectToArray(cars));
