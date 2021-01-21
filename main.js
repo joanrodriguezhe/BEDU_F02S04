@@ -38,13 +38,32 @@ function objectToArray(obj) {
 //console.log(objectToArray(cars));
 
 //Reto 02
-
 function arrayToObject(array) {
     let obj = {};
     array.forEach(element => {
-        obj.element[0] = obj.element[1];
+        obj[element[0]] = element[1];
     });
     return obj;
 }
 
-console.log(arrayToObject([['brand', 'Nissan'], ['model', 'Versa'], ['year', 2020]]))
+//console.log(arrayToObject([['brand', 'Nissan'], ['model', 'Versa'], ['year', 2020]]))
+
+const singers = [
+    { name: 'Steven Tyler', band: 'Aerosmith', born: 1948 },
+    { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 },
+    { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
+    { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
+];
+
+function pluck(list, propertyName) {
+    return list.map(el =>el[propertyName]);
+}
+
+console.log(pluck(singers, 'name'));
+// ["Steven Tyler", "Karen Carpenter", "Kurt Cobain", "Chris Cornell"]
+
+console.log(pluck(singers, 'band'));
+// ["Aerosmith", "The Carpenters", "Nirvana", "Soundgarden"]
+
+console.log(pluck(singers, 'born'));
+  // [1948, 1950, 1967, 1964]
